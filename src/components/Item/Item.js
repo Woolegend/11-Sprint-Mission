@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 function Item({ item, type = null }) {
   const classNames = `Item ${type ? type : ""}`;
 
-  const handleLoadDefaultImg = (e) => {
+  const handleErrorLoadingImg = (e) => {
     e.target.src = thumbDefault;
   };
 
@@ -25,7 +25,7 @@ function Item({ item, type = null }) {
           className="thumbnail"
           src={item.images[0] ?? thumbDefault}
           alt={item.name}
-          onError={handleLoadDefaultImg}
+          onError={handleErrorLoadingImg}
         />
         <div className="Item-content">
           <h4 className="name">{item.name}</h4>
