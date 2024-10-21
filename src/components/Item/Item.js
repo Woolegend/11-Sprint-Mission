@@ -13,12 +13,20 @@ import { Link } from "react-router-dom";
  */
 function Item({ item, type = null }) {
   const classNames = `Item ${type ? type : ""}`;
-  const thumbnail = item.images[0] ?? thumbDefault;
+
+  const handleLoadDefaultImg = (e) => {
+    e.target.src = thumbDefault;
+  };
 
   return (
     <Link to={`/items/${item.id}`}>
       <div className={classNames}>
-        <img className="thumbnail" src={thumbnail} alt={item.name} />
+        <img
+          className="thumbnail"
+          src={item.images[0] ?? thumbDefault}
+          alt={item.name}
+          onError={handleLoadDefaultImg}
+        />
         <div className="Item-content">
           <h4 className="name">{item.name}</h4>
           <div className="price">{`${item.price}원`}</div>
