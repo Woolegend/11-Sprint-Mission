@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import FileInput from "../FileInput/FileInput";
-import "./AddItemForm.css";
+import FileInput from "../../components/FileInput/FileInput";
+import "./AddItemPage.css";
 import ic_tag_x from "../../assets/images/ic_tag_x.svg";
 import { array, number, object, string } from "yup";
 
